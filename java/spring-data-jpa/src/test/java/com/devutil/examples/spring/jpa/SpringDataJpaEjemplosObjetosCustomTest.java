@@ -3,7 +3,7 @@ package com.devutil.examples.spring.jpa;
 import java.util.List;
 
 import org.junit.Assert;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
@@ -17,13 +17,13 @@ import com.devutil.examples.spring.jpa.repository.customobjects.IEntidadNombre;
 @RunWith(SpringRunner.class)
 @DataJpaTest
 @Sql(scripts = "/entidad-datos-test.sql")
-class SpringDataJpaEjemplosObjetosCustomTest {
+public class SpringDataJpaEjemplosObjetosCustomTest {
 
     @Autowired
     private EntidadRepository entidadRepository;
 
     @Test
-    void ejemploResultadoObjectArray() {
+    public void ejemploResultadoObjectArray() {
 
         List<Object[]> resultado = entidadRepository.calcularGroupByNombre();
 
@@ -45,7 +45,7 @@ class SpringDataJpaEjemplosObjetosCustomTest {
     }
 
     @Test
-    void ejemploResultadoListObjetoCustom() {
+    public void ejemploResultadoListObjetoCustom() {
 
         List<EntidadNombre> resultado = entidadRepository.calcularGroupByEntidadNombre();
 
@@ -67,7 +67,7 @@ class SpringDataJpaEjemplosObjetosCustomTest {
     }
 
     @Test
-    void ejemploResultadoListInterfazCustom() {
+    public void ejemploResultadoListInterfazCustom() {
 
         List<IEntidadNombre> resultado = entidadRepository.calcularGroupByIEntidadNombre();
 
@@ -89,7 +89,7 @@ class SpringDataJpaEjemplosObjetosCustomTest {
     }
 
     @Test
-    void ejemploResultadoListInterfazCustomQueryNativa() {
+    public void ejemploResultadoListInterfazCustomQueryNativa() {
 
         List<IEntidadNombre> resultado = entidadRepository.calcularGroupByIEntidadNombreNative();
 

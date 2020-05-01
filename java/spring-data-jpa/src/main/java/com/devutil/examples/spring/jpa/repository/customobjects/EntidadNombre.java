@@ -7,6 +7,6 @@ public class EntidadNombre {
 
     private final String nombre;
 
-    private final Integer contador;
+    private final Long contador;
 
 }
